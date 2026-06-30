@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LazyGenius AI - Discover the best AI productivity tools to automate your work, save time, and boost efficiency. Reviews, comparisons & guides.">
+    <meta name="keywords" content="AI productivity tools, best AI tools, AI automation, AI reviews, AI writing tools, AI workflow tools">
+    <meta name="author" content="LazyGenius AI">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="LazyGenius AI - Work Smart, Not Hard">
+    <meta property="og:description" content="Discover the best AI productivity tools to automate your work and 10x your output.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lazygeniusai.com">
+
+    <title>LazyGenius AI - Work Smart, Not Hard | Best AI Productivity Tools</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C3CE1;
+            --primary-dark: #5429B5;
+            --primary-light: #8B5CF6;
+            --secondary: #00D4AA;
+            --secondary-dark: #00B894;
+            --accent: #FF6B6B;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #2D2D44;
+            --gray: #8888A0;
+            --gray-light: #B0B0C8;
+            --light: #F0F0FF;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #6C3CE1, #00D4AA);
+            --gradient-2: linear-gradient(135deg, #6C3CE1, #FF6B6B);
+            --gradient-3: linear-gradient(135deg, #0F0F1A, #1A1A2E);
+            --shadow: 0 10px 40px rgba(108, 60, 225, 0.15);
+            --shadow-lg: 0 20px 60px rgba(108, 60, 225, 0.2);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(108, 60, 225, 0.15);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-light);
+            max-width: 600px;
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(108, 60, 225, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-light);
+            background: rgba(108, 60, 225, 0.1);
+        }
+
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+            background: rgba(15, 15, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gray-light);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(108, 60, 225, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.1), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-light);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            width: 100%;
+            max-width: 480px;
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .hero-card-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .hero-card-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .hero-card-dots span:nth-child(1) { background: #FF5F57; }
+        .hero-card-dots span:nth-child(2) { background: #FEBC2E; }
+        .hero-card-dots span:nth-child(3) { background: #28C840; }
+
+        .hero-card-title {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-left: auto;
+        }
+
+        .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-item:hover {
+            background: rgba(108, 60, 225, 0.1);
+            border-color: rgba(108, 60, 225, 0.3);
+            transform: translateX(5px);
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tool-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .tool-info p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .tool-rating {
+            margin-left: auto;
+            color: #FFD700;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ==================== FEATURES ==================== */
+        .features {
+            background: var(--dark-2);
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 60, 225, 0.3);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(108, 60, 225, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== TOOLS SECTION ==================== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .tool-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(108, 60, 225, 0.3);
+        }
+
+        .tool-card-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            background: rgba(0, 212, 170, 0.15);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .tool-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .tool-card .category {
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            margin-bottom: 12px;
+        }
+
+        .tool-card p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .tool-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .tool-price {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .tool-link {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tool-link:hover {
+            color: var(--white);
+        }
+
+        .tool-stars {
+            color: #FFD700;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        /* ==================== BLOG ==================== */
+        .blog {
+            background: var(--dark-2);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .blog-card {
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .blog-card-content {
+            padding: 24px;
+        }
+
+        .blog-card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(108, 60, 225, 0.15);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .blog-card h3:hover {
+            color: var(--primary-light);
+        }
+
+        .blog-card p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .read-more {
+            color: var(--primary-light);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ==================== NEWSLETTER ==================== */
+        .newsletter {
+            position: relative;
+        }
+
+        .newsletter-box {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-box::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(108, 60, 225, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .newsletter-box h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .newsletter-box p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--dark);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary-light);
+        }
+
+        .newsletter-form button {
+            padding: 16px 32px;
+            border-radius: 50px;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.4);
+        }
+
+        .newsletter-note {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 16px;
+            position: relative;
+        }
+
+        /* ==================== ABOUT ==================== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .about-text p {
+            color: var(--gray-light);
+            font-size: 1rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(108, 60, 225, 0.08);
+            border-radius: var(--radius-sm);
+        }
+
+        .about-feature i {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .about-feature span {
+            font-weight: 500;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .about-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 20px;
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .about-card .role {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .about-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .about-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-light);
+            transition: all 0.3s ease;
+        }
+
+        .about-social a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* ==================== CONTACT ==================== */
+        .contact {
+            background: var(--dark-2);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-light);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--dark);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-light);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-sm);
+        }
+
+        .contact-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(108, 60, 225, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-light);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card h4 {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .contact-card p {
+            font-weight: 600;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            margin-top: 16px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-light);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ==================== AFFILIATE DISCLAIMER ==================== */
+        .disclaimer {
+            background: rgba(108, 60, 225, 0.05);
+            border: 1px solid rgba(108, 60, 225, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ==================== SCROLL TO TOP ==================== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.4);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 968px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .features-grid,
+            .tools-grid,
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-subtitle {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-2);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .features-grid,
+            .tools-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .newsletter-box {
+                padding: 40px 24px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">🧠</div>
+                <span>Lazy<span class="gradient-text">Genius</span> AI</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#tools">Tools</a>
+                <a href="#blog">Blog</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#newsletter" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Subscribe <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    Updated for 2026
+                </div>
+                <h1>Work Smart,<br>Not Hard With <span class="gradient-text">AI Tools</span></h1>
+                <p>Discover the best AI productivity tools that save you 10+ hours every week. Honest reviews, real comparisons, and actionable guides — so you can be lazy, and still be a genius. 🧠</p>
+                <div class="hero-buttons">
+                    <a href="#tools" class="btn btn-primary">
+                        Explore AI Tools <i class="fas fa-robot"></i>
+                    </a>
+                    <a href="#blog" class="btn btn-outline">
+                        Read Blog <i class="fas fa-book-open"></i>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>150+</h3>
+                        <p>AI Tools Reviewed</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50K+</h3>
+                        <p>Monthly Readers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.9★</h3>
+                        <p>Reader Rating</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="hero-card-title">Top Picks 2026</span>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon" style="background: rgba(108, 60, 225, 0.2); color: #8B5CF6;">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>Jasper AI</h4>
+                            <p>AI Writing Assistant</p>
+                        </div>
+                        <span class="tool-rating">⭐ 4.8</span>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon" style="background: rgba(0, 212, 170, 0.2); color: #00D4AA;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>Surfer SEO</h4>
+                            <p>AI SEO Optimizer</p>
+                        </div>
+                        <span class="tool-rating">⭐ 4.7</span>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon" style="background: rgba(255, 107, 107, 0.2); color: #FF6B6B;">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>Midjourney</h4>
+                            <p>AI Image Generator</p>
+                        </div>
+                        <span class="tool-rating">⭐ 4.9</span>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon" style="background: rgba(255, 215, 0, 0.2); color: #FFD700;">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>Zapier AI</h4>
+                            <p>AI Automation</p>
+                        </div>
+                        <span class="tool-rating">⭐ 4.6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="features section" id="features">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-badge">✨ Why LazyGenius AI</span>
+                <h2 class="section-title">Why <span class="gradient-text">50,000+ Readers</span> Trust Us</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">We don't just list AI tools — we test them, compare them, and tell you the truth.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Hands-On Testing</h3>
+                    <p>Every tool is personally tested before we write a single word. No fake reviews, no paid placements — just honest experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Unbiased Comparisons</h3>
+                    <p>We compare AI tools head-to-head so you can pick the right one for YOUR needs and budget. Side-by-side, no BS.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Save 10+ Hours/Week</h3>
+                    <p>Our guides show you exactly how to automate repetitive tasks and reclaim your time using the right AI tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3>Budget-Friendly Picks</h3>
+                    <p>We highlight free alternatives and budget options for every premium tool. Productivity doesn't have to break the bank.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Beginner Guides</h3>
+                    <p>New to AI? Our step-by-step tutorials make it easy for anyone to start using AI tools — zero tech skills needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Always Updated</h3>
+                    <p>AI moves fast. We update our reviews monthly so you always have the latest pricing, features, and recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TOOLS ==================== -->
+    <section class="section" id="tools">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-badge">🤖 Top AI Tools</span>
+                <h2 class="section-title">Best <span class="gradient-text">AI Productivity Tools</span> in 2026</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Hand-picked, personally tested, and honestly reviewed. These tools will transform your workflow.</p>
+            </div>
+            <div class="tools-grid">
+                <!-- Tool 1 -->
+                <div class="tool-card">
+                    <span class="tool-card-badge">🏆 Editor's Choice</span>
+                    <div class="tool-card-icon" style="background: rgba(108, 60, 225, 0.15); color: var(--primary-light);">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Jasper AI</h3>
+                    <div class="category">AI Writing & Content</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.8/5</div>
+                    <p>Create blog posts, emails, and marketing copy 10x faster with AI-powered writing. Perfect for content creators & marketers.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">From $49/mo</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Tool 2 -->
+                <div class="tool-card">
+                    <span class="tool-card-badge">⚡ Best for SEO</span>
+                    <div class="tool-card-icon" style="background: rgba(0, 212, 170, 0.15); color: var(--secondary);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Surfer SEO</h3>
+                    <div class="category">AI SEO Optimization</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.7/5</div>
+                    <p>Optimize your content for Google with AI-driven SEO suggestions. Write content that ranks on page 1 every time.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">From $89/mo</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Tool 3 -->
+                <div class="tool-card">
+                    <span class="tool-card-badge">🔥 Most Popular</span>
+                    <div class="tool-card-icon" style="background: rgba(255, 107, 107, 0.15); color: var(--accent);">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Zapier AI</h3>
+                    <div class="category">AI Workflow Automation</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.6/5</div>
+                    <p>Connect 6,000+ apps and automate your entire workflow with AI. Save hours on repetitive tasks every single day.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">Free Plan Available</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Tool 4 -->
+                <div class="tool-card">
+                    <div class="tool-card-icon" style="background: rgba(255, 215, 0, 0.15); color: #FFD700;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>ClickUp AI</h3>
+                    <div class="category">AI Project Management</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.7/5</div>
+                    <p>Manage projects, write docs, and automate tasks with a built-in AI assistant. All-in-one workspace for teams.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">Free Plan Available</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Tool 5 -->
+                <div class="tool-card">
+                    <div class="tool-card-icon" style="background: rgba(0, 150, 255, 0.15); color: #0096FF;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>GetResponse AI</h3>
+                    <div class="category">AI Email Marketing</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.5/5</div>
+                    <p>Create automated email campaigns with AI-written subject lines and content. Boost open rates by up to 40%.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">From $19/mo</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Tool 6 -->
+                <div class="tool-card">
+                    <div class="tool-card-icon" style="background: rgba(160, 82, 255, 0.15); color: #A052FF;">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Midjourney</h3>
+                    <div class="category">AI Image Generation</div>
+                    <div class="tool-stars">⭐⭐⭐⭐⭐ 4.9/5</div>
+                    <p>Generate stunning, photorealistic images from text prompts. Perfect for social media, blogs, and marketing visuals.</p>
+                    <div class="tool-card-footer">
+                        <span class="tool-price">From $10/mo</span>
+                        <a href="#" class="tool-link">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-primary">View All AI Tools <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG ==================== -->
+    <section class="blog section" id="blog">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-badge">📝 Latest Articles</span>
+                <h2 class="section-title">From The <span class="gradient-text">LazyGenius</span> Blog</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Deep dives, comparisons, and guides to help you master AI productivity tools.</p>
+            </div>
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #6C3CE1, #00D4AA);">🤖</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Best Of</span>
+                        <h3><a href="#">10 Best AI Productivity Tools That Will Transform Your 2026</a></h3>
+                        <p>The ultimate list of AI tools to save time, automate tasks, and boost your output to genius level...</p>
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> June 28, 2026</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog 2 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #FF6B6B, #FFD700);">⚔️</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Comparison</span>
+                        <h3><a href="#">Jasper AI vs Copy.ai vs Writesonic: Which Wins in 2026?</a></h3>
+                        <p>We tested all three AI writing tools head-to-head. Here's our honest verdict on pricing, quality & features...</p>
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> June 25, 2026</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog 3 -->
+                <div class="blog-card">
+                    <div class="blog-card-image" style="background: linear-gradient(135deg, #0096FF, #00D4AA);">💡</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Guide</span>
+                        <h3><a href="#">How to Automate Your Entire Workflow Using AI (Step-by-Step)</a></h3>
+                        <p>A beginner-friendly guide to automating repetitive tasks with Zapier AI, Make.com, and other AI automation tools...</p>
+                        <div class="blog-card-meta">
+                            <span><i class="far fa-calendar"></i> June 22, 2026</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-outline">View All Articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="newsletter section" id="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>🧠 Join The <span class="gradient-text">LazyGenius</span> Newsletter</h2>
+                <p>Get the best AI tool picks, exclusive deals, and productivity hacks delivered to your inbox every week. Free forever.</p>
+                <form class="newsletter-form" onsubmit="subscribeEmail(event)">
+                    <input type="email" placeholder="Enter your email address..." required id="emailInput">
+                    <button type="submit">Subscribe Free <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="newsletter-note">🔒 No spam ever. Unsubscribe anytime. Join 10,000+ smart readers.</p>
+                <div id="successMessage" style="display: none; margin-top: 16px; color: var(--secondary); font-weight: 600;">
+                    ✅ Welcome to the LazyGenius family! Check your inbox.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-badge">👋 About Us</span>
+                <h2 class="section-title">The <span class="gradient-text">Brain</span> Behind LazyGenius AI</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hey there! 👋 Welcome to <strong>LazyGenius AI</strong> — the place where being lazy is actually a superpower.</p>
+                    <p>I believe in working smarter, not harder. That's why I test dozens of AI tools so you don't have to. Every review is based on real, hands-on experience — no fluff, no fake hype, just honest opinions.</p>
+                    <p>My mission? Help you <strong>save 10+ hours every week</strong> by using the right AI tools for your work, business, and life. Whether you're a solopreneur, freelancer, or small business owner — I've got you covered.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>150+ AI Tools Personally Tested</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Honest & Unbiased Reviews</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Beginner-Friendly Guides & Tutorials</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Updated Monthly with Latest AI Trends</span>
+                        </div>
+                    </div>
+                    <div class="disclaimer">
+                        <strong>📢 Affiliate Disclaimer:</strong> Some links on this website are affiliate links. This means if you click and make a purchase, I may earn a small commission at no extra cost to you. I only recommend tools I genuinely use and believe in. This helps keep LazyGenius AI free for everyone. Thank you for your support! ❤️
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <div class="about-avatar">🧠</div>
+                        <h3>LazyGenius AI</h3>
+                        <p class="role">AI Tools Expert & Reviewer</p>
+                        <p style="color: var(--gray-light); font-size: 0.9rem;">"Be lazy. Be smart. Let AI do the heavy lifting."</p>
+                        <div class="about-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div style="text-align: center;">
+                <span class="section-badge">📬 Get In Touch</span>
+                <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Have a question, suggestion, or partnership inquiry? Drop me a message!</p>
+            </div>
+            <div class="contact-grid">
+                <form class="contact-form" onsubmit="sendMessage(event)">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="Partnership / Question / Feedback">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Tell me what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="contactSuccess" style="display: none; color: var(--secondary); font-weight: 600;">
+                        ✅ Message sent! I'll get back to you within 24 hours.
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@lazygeniusai.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fab fa-twitter"></i></div>
+                        <div>
+                            <h4>Twitter / X</h4>
+                            <p>@LazyGeniusAI</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fab fa-youtube"></i></div>
+                        <div>
+                            <h4>YouTube</h4>
+                            <p>LazyGenius AI</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <h4>Partnerships</h4>
+                            <p>partners@lazygeniusai.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Based In</h4>
+                            <p>Working Remotely 🌍</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <div class="logo-icon">🧠</div>
+                        <span>Lazy<span class="gradient-text">Genius</span> AI</span>
+                    </a>
+                    <p>Your trusted source for honest AI tool reviews, comparisons, and productivity guides. Work smart, not hard.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#tools">AI Tools</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <a href="#">AI Writing Tools</a>
+                    <a href="#">AI SEO Tools</a>
+                    <a href="#">AI Automation</a>
+                    <a href="#">AI Image Tools</a>
+                    <a href="#">AI Email Tools</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Beginner's Guide</a>
+                    <a href="#">Tool Comparisons</a>
+                    <a href="#">Free AI Tools</a>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 LazyGenius AI. All rights reserved. Made with 🧠 and ☕</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Newsletter Subscription
+        function subscribeEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('emailInput').value = '';
+
+            // TODO: Connect to Mailchimp / ConvertKit API
+            console.log('Subscribed:', email);
+        }
+
+        // Contact Form
+        function sendMessage(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').style.display = 'block';
+
+            // TODO: Connect to Formspree / EmailJS
+            console.log('Message sent!');
+        }
+
+        // Smooth reveal animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .tool-card, .blog-card, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
